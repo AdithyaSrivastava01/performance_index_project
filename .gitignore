@@ -1,2 +1,4 @@
 Student_performance_Index.egg-info
 logs
+src/__pycache__
+artifacts
