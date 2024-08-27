@@ -2,7 +2,7 @@ import sys
 import pandas as pd
 from src.exception import CustomException
 from src.utils import load_object
-
+import os
 
 class PredictPipeline:
     def __init__(self):
@@ -24,7 +24,7 @@ class PredictPipeline:
             raise CustomException(e,sys)
 
 
-
+# goal of this class is to map Data from HTML to backend to make predictions
 class CustomData:
     def __init__(  self,
         gender: str,

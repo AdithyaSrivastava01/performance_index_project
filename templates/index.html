@@ -7,5 +7,10 @@
 </head>
 <body>
     <h1>Welcome to the home page</h1>
+
+     <!-- Button that routes to the predictdata API -->
+     <form action="{{ url_for('predict_datapoint') }}" method="get">
+        <button type="submit">Let's Predict your Maths Score</button>
+    </form>
 </body>
 </html>
