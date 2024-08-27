@@ -3,3 +3,4 @@ logs
 src/__pycache__
 artifacts
 src/components/__pycache__
+catboost_info
