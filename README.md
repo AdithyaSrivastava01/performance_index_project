@@ -1,4 +1,4 @@
-# Student Performance Index Prediction  
+# EduVista: Predictive Learning Analytics
 
 This project leverages machine learning techniques to predict academic scores of students based on a variety of features. The goal is to provide an intuitive and accurate model for evaluating student performance, helping educators and institutions gain insights for better academic planning and resource allocation.  
 
