@@ -17,9 +17,9 @@ This project leverages machine learning techniques to predict academic scores of
 ## Tech Stack  
 
 - **Programming Languages**: Python  
-- **Machine Learning Frameworks**: XGBoost, Ridge Regressor  
+- **Machine Learning Frameworks**: XGBoost, Scikit-learn, CatBoost  
 - **Web Framework**: Flask  
-- **Deployment**: AWS EC2  
+- **Deployment**: Docker, AWS EC2  
 - **CI/CD Tools**: GitHub Actions  
 - **Data Visualization**: Matplotlib, Seaborn  
 
@@ -30,24 +30,36 @@ This project leverages machine learning techniques to predict academic scores of
 ```plaintext
 performance_index_project/
 │
-├── app.py                  # Main Flask application script
-├── requirements.txt        # Python dependencies
-├── README.md               # Project documentation
+├── notebook/
+│   ├── data/
+│   │   └── stud.csv                 # Public Dataset
+│   ├── EDA STUDENT.ipynb            # EDA and visualization of the data
+│   └── MODELTRAINING.ipynb          # Model Training Notebook
 │
-├── static/                 # Static files (CSS, JS, images)
-│   └── styles.css          # Styling for the web app
+├── artifacts/                 
+│   ├── model.pkl                    # Pretrained model for prediction
+│   ├── test.csv                     # Dataset used for testing
+│   ├── train.csv                    # Dataset used for training
+│   └── processor.pkl                # Preprocessor used during prediction stage
 │
-├── templates/              # HTML templates for the web app
-│   ├── index.html          # Homepage
-│   └── result.html         # Results page
+├── src/                             # Main scripts
+│   ├── components/         
+│   │    ├── data_ingestion.py       # Data Ingestion file
+│   │    ├── data_transformation.py  # Data transformation file
+│   │    └── model_trainer.py        # Model Training file
+│   │
+│   ├── pipeline/       
+│   │    └── predict_pipeline.py     # Prediction Pipeline file
+│   │
+│   ├── exception.py                 # Exception Handling file
+│   ├── logger.py                    # Logger file to log activities
+│   └── utils.py                     # Utility script
 │
-├── models/                 # Machine learning models
-│   └── trained_model.pkl   # Pretrained model for prediction
+├── templates/                       # HTML templates for the web app
+│   ├── index.html                   # Welcome page
+│   └── home.html                    # Results page
 │
-├── data/                   # Data-related files
-│   ├── dataset.csv         # Dataset used for training
-│   └── processed_data.pkl  # Preprocessed data for the model
-│
-└── utils/                  # Utility scripts
-    ├── preprocess.py       # Data preprocessing functions
-    └── visualize.py        # Functions for creating visualizations
+├── app.py                           # Main Flask application script
+├── requirements.txt                 # Python dependencies
+├── Dockerfile                       # Docker file 
+└── README.md                        # Project documentation
